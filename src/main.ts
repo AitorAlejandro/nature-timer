@@ -1,4 +1,4 @@
-import './styles/styles.css';
+import "./styles/styles.css";
 
 import { finalize, fromEvent, interval, takeWhile } from "rxjs";
 
@@ -6,6 +6,10 @@ const counter$ = interval(1000);
 
 const feedback = document.querySelector(".feedback") as HTMLDivElement;
 const form = document.querySelector(".form") as HTMLFormElement;
+const video = document.querySelector("#video-background") as HTMLVideoElement;
+console.log(video);
+const sound = document.querySelector("#sound-background") as HTMLAudioElement;
+console.log(sound);
 const submit$ = fromEvent<SubmitEvent>(form, "submit");
 
 submit$.subscribe((event: SubmitEvent) => {

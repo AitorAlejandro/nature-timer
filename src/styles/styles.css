@@ -10,9 +10,45 @@ html {
 
 .app-wrapper {
   height: 100vh;
+  width: 96%;
+  margin: 0 auto;
   display: flex;
+  flex-direction: column;
   justify-content: space-evenly;
   align-items: center;
+}
+
+.page-title {
+  text-align: center;
+}
+
+.time-select {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  max-width: 26em;
+}
+
+.time-select .button {
+  background: rgba(255, 255, 255, 0.3);
+  font-size: 1rem;
+  cursor: pointer;
+  border: 1px solid white;
+  padding: 1rem 1.2rem;
+}
+
+.ambient-picker {
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+  max-width: 12em;
+}
+
+.ambient-picker .button {
+  background: rgba(255, 255, 255, 0.3);
+  border-radius: 50%;
+  padding: 1rem;
+  border: 1px solid white;
 }
 
 video {
@@ -21,4 +57,7 @@ video {
   left: 0%;
   width: 100%;
   z-index: -10;
+  width: 100vw;
+  height: 100vh;
+  object-fit: cover;
 }
