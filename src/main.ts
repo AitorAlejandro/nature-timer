@@ -1,3 +1,5 @@
+import './styles/styles.css';
+
 import { finalize, fromEvent, interval, takeWhile } from "rxjs";
 
 const counter$ = interval(1000);
