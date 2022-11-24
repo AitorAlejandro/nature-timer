@@ -20,6 +20,9 @@ html {
 
 .page-title {
   text-align: center;
+  color: #000000;
+  background-color:rgba(255, 255, 255, 0.3);
+  padding: 1rem;
 }
 
 .time-select {
@@ -35,6 +38,14 @@ html {
   cursor: pointer;
   border: 1px solid white;
   padding: 1rem 1.2rem;
+}
+
+.feedback {
+  color: #000000;
+  background-color:rgba(255, 255, 255, 0.3);
+  font-size: 2rem;
+  padding: 1rem;
+  border-radius: 20%;
 }
 
 .ambient-picker {

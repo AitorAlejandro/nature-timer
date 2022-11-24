@@ -5,21 +5,20 @@ import { finalize, fromEvent, interval, takeWhile } from "rxjs";
 const counter$ = interval(1000);
 
 const feedback = document.querySelector(".feedback") as HTMLDivElement;
-const form = document.querySelector(".form") as HTMLFormElement;
-const video = document.querySelector("#video-background") as HTMLVideoElement;
-console.log(video);
-const sound = document.querySelector("#sound-background") as HTMLAudioElement;
-console.log(sound);
-const submit$ = fromEvent<SubmitEvent>(form, "submit");
+const timeButtons = document.querySelectorAll('.time-button') as ArrayLike<HTMLButtonElement>;
+// const video = document.querySelector("#video-background") as HTMLVideoElement;
+// const sound = document.querySelector("#sound-background") as HTMLAudioElement;
 
-submit$.subscribe((event: SubmitEvent) => {
-  event.preventDefault();
-  const seconds = (event.target as HTMLFormElement).seconds.valueAsNumber;
-  startCountdown(seconds);
+const timeButtonsClicks$ = fromEvent(timeButtons, 'click');
+
+timeButtonsClicks$.subscribe((event: Event): void => {
+  const selectedMinutes: string = (event.target as HTMLButtonElement).dataset.minutes ?? '';
+  const selectedSeconds = Number(selectedMinutes) * 60;
+  startCountdown(selectedSeconds);
 });
 
 function resetInput() {
-  form.seconds.valueAsNumber = 0;
+  feedback.textContent = '00:00';
 }
 
 function printSeconds(numberOfSeconds: number, value: number) {

@@ -14,23 +14,35 @@
     <div class="app-wrapper">
       <h1 class="page-title">nature timer</h1>
       <div class="time-select">
-        <button type="button" class="button" data-seconds="60000">1 minute</button>
-        <button type="button" class="button" data-seconds="300000">5 minutes</button>
-        <button type="button" class="button" data-seconds="600000">10 minutes</button>
+        <button type="button" class="button time-button" data-minutes="1">
+          1 minute
+        </button>
+        <button type="button" class="button time-button" data-minutes="5">
+          5 minutes
+        </button>
+        <button type="button" class="button time-button" data-minutes="10">
+          10 minutes
+        </button>
       </div>
-      <form class="form">
-        <input type="number" name="seconds" />
-        <button type="submit">go</button>
-        <div class="feedback"></div>
-        <audio id="sound-background" class="song" loop autoplay>
-          <source src="/sound/beach.mp3" />
-        </audio>
-      </form>
+      <div class="feedback">00:00</div>
+      <audio id="sound-background" class="song" loop autoplay>
+        <source src="/sound/beach.mp3" />
+      </audio>
       <div class="ambient-picker">
-        <button type="button" class="button" aria-label="sound of rain" data-sound="rain">
+        <button
+          type="button"
+          class="button"
+          aria-label="sound of rain"
+          data-sound="rain"
+        >
           <img src="/icon/icon-cloud.svg" alt="" width="30" />
         </button>
-        <button type="button" class="button" aria-label="sound of ocean" data-sound="ocean">
+        <button
+          type="button"
+          class="button"
+          aria-label="sound of ocean"
+          data-sound="ocean"
+        >
           <img src="/icon/icon-sun.svg" alt="" width="30" />
         </button>
       </div>
